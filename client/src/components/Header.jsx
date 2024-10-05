@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
+import Logo from "../assets/logo.png"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,11 @@ const Header = () => {
     <nav className="px4">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <div className="text-black text-4xl font-bold">Hurricane</div>
+              <div className="logo flex items-center">
+                <img src={Logo} alt="hurricane-logo" width="55px"/>
+              <div className="text-black text-4xl font-bold">Hurricane</div>
+
+              </div>
           <ul className="hidden md:flex space-x-4">
             <li>
               <a href="/" className="text-black">
@@ -37,11 +42,12 @@ const Header = () => {
             </li>
           </ul>
 
+
           {/* toggle menu */}
           <div className="md:hidden">
             <button
               id="menu-toggle"
-              className="text-black"
+              className="text-black text-3xl"
               onClick={toggleMenu}
             >
               <FaBars />
@@ -49,7 +55,7 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="btn hidden md:flex flex items-center gap-x-2.5">Login <FiLogIn /></div>
+          <div className="btn"><button className=" flex items-center gap-x-2.5 bg-primary px-4 py-2 text-white rounded-full">Login <FiLogIn /></button></div>
         </div>
       </div>
 
