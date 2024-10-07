@@ -7,6 +7,10 @@ import "./output.css";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetail";
+import Login from "./pages/Login"
+import AuthorPosts from "./pages/AuthorPosts";
+import Register from "./pages/Register";
+import CategoryPosts from "./pages/CategoryPosts";
 
 
 const router = createBrowserRouter([
@@ -16,9 +20,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/posts/1", element: <PostDetail /> },
-    ],
-  },
+      { path: "posts/:id", element: <PostDetail /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "posts/users/sdfsdf", element: <AuthorPosts /> },
+      { path: "posts/categories/:category", element: <CategoryPosts /> }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

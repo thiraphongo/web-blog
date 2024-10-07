@@ -4,20 +4,24 @@ import PostAuthor from "./PostAuthor"
 const PostItem = (props) => {
   const { data } = props;
 
+  const shortDesc = data.desc.length > 145 ? data.desc.substr(0,140) + '...' : data.desc;
+  const postTitle = data.title.length > 30 ? data.title.substr(0,30) + '...' : data.title;
+
+
   return (
-    <div className="post-item py-20">
+    <div className="post-item ">
       <div className="post-thumbnail">
-        <img src={data.thumbnail} alt={data.title} />
+      <Link to={`/posts/${data.id}`}><img src={data.thumbnail} alt={data.title} width="100%"/></Link>
       </div>
       <div className="post-contant py-4">
         <Link to={`/posts/${data.id}`}>
-          <h3 className="font-bold text-primary text-2xl">{data.title}</h3>
+          <h3 className="font-bold text-primary text-2xl">{postTitle}</h3>
         </Link>
       </div>
-      <p>{data.desc}</p>
+      <p>{shortDesc}</p>
       <div className="post-footer flex items-center justify-between">
         <PostAuthor />
-        <Link to={`/posts/categories/${data.category}`}>{data.category}</Link>
+        <Link className="btn btn-author-category hover:bg-blue-600" to={`/posts/categories/${data.category}`}>{data.category}</Link>
       </div>
     </div>
   );

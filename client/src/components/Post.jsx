@@ -2,45 +2,12 @@ import SearchBar from "../components/SearchBar";
 import PostItem from "./PostItem";
 
 // import img
-import Thumbnail from "../assets/blog_business.jpg";
 import { useState } from "react";
+import { Dummy_Posts } from "../data";
 
 const Post = () => {
 
-  const Dummy_Posts = [
-    {
-      id: 1,
-      thumbnail: Thumbnail,
-      category: "Blog",
-      title: "Heading Title Blog 01",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aperiam inventore officia omnis voluptate beatae eligendi
-                    quia dolorem atque asperiores eius.`,
-      authorID: 1,
-    },
-    {
-      id: 2,
-      thumbnail: Thumbnail,
-      category: "Blog",
-      title: "Heading Title Blog 02",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aperiam inventore officia omnis voluptate beatae eligendi
-                    quia dolorem atque asperiores eius.`,
-      authorID: 2,
-    },
-    {
-      id: 3,
-      thumbnail: Thumbnail,
-      category: "Blog",
-      title: "Heading Title Blog 03",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aperiam inventore officia omnis voluptate beatae eligendi
-                    quia dolorem atque asperiores eius.`,
-      authorID: 3,
-    },
-  ];
-
-  const [posts, setPosts] = useState(Dummy_Posts);
+    const [posts, setPosts] = useState(Dummy_Posts);
 
   return (
     <>
@@ -50,12 +17,13 @@ const Post = () => {
         </div>
         <SearchBar />
       </div>
-      <section className="post">
-        <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+      <section className="post py-20">
+        {posts.length > 0 ? <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-10">
           {posts.map((data) => (
             <PostItem key={data.id} data={data}  />
           ))}
-        </div>
+        </div> : <div className="container mx-auto"><h2 className="text-4xl font-bold text-primary text-center">No post fouds</h2></div>
+        }
       </section>
     </>
   );

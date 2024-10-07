@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
 import Logo from "../assets/logo.png"
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="btn"><button className=" flex items-center gap-x-2.5 bg-primary px-4 py-2 text-white rounded-full">Login <FiLogIn /></button></div>
+          <div className="btn"><Link to="/login" className=" flex items-center gap-x-2.5 bg-primary px-4 py-2 text-white rounded-full">Login <FiLogIn /></Link></div>
         </div>
       </div>
 

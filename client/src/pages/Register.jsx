@@ -3,10 +3,12 @@ import Logo from "../assets/logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const [userData, setUserData] = useState({
     username: "",
+    email: "",
     password: "",
+    password2: "",
   });
 
   const inputValue = e => {
@@ -27,8 +29,8 @@ const Login = () => {
                 <h3 className="text-2xl">Hurricane</h3>
               </div>
               <div className="register-form py-4">
-                <h2 className="text-3xl font-bold">Login</h2>
-                <p className="text-xl py-2">เข้าสู่ระบบ</p>
+                <h2 className="text-3xl font-bold">Register</h2>
+                <p className="text-xl py-2">สมัครสมาชิกเพื่อใช้งานระบบ</p>
                 <form
                   action=""
                   className="form-register form flex flex-col gap-y-4  py-4"
@@ -47,6 +49,16 @@ const Login = () => {
                     autoFocus
                   />
                   <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    id="email"
+                    className="h-10 px-2 border border-solid border-1 border-slate-400 rounded-md"
+                    value={userData.email}
+                    onChange={inputValue}
+                    autoFocus
+                  />
+                  <input
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -56,17 +68,27 @@ const Login = () => {
                     onChange={inputValue}
                     autoFocus
                   />
+                  <input
+                    type="password"
+                    name="password2"
+                    placeholder="Confirm Password"
+                    id="password2"
+                    className="h-10 px-2 border border-solid border-1 border-slate-400 rounded-md"
+                    value={userData.password2}
+                    onChange={inputValue}
+                    autoFocus
+                  />
                   <button
                     type="submit"
                     className="btn bg-primary text-white py-2 rounded-md hover:bg-blue-600"
                   >
-                    เข้าสู่ระบบ
+                    สมัครสมาชิก
                   </button>
                 </form>
                 <h4>
-                  หากไม่มีบัญชี ?{" "}
-                  <Link to="/register" className="text-primary">
-                    สมัครสมาชิก
+                  หากมีบัญชีอยู่แล้ว ?{" "}
+                  <Link to="/login" className="text-primary">
+                    เข้าสู่ระบบ
                   </Link>
                 </h4>
               </div>
@@ -78,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
