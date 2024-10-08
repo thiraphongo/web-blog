@@ -1,0 +1,26 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary-color: #161442;
+}
+
+.post-thumbnail img {
+    border-radius: 6px;
+}
+
+.post-item {
+    background: rgba(243, 243, 243, .8);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.btn-author-category {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 6px;
+}
