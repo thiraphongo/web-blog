@@ -11,6 +11,7 @@ import Login from "./pages/Login"
 import AuthorPosts from "./pages/AuthorPosts";
 import Register from "./pages/Register";
 import CategoryPosts from "./pages/CategoryPosts";
+import Authors from "./pages/Authors";
 
 
 const router = createBrowserRouter([
@@ -21,11 +22,17 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "posts/:id", element: <PostDetail /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      { path: "posts/users/sdfsdf", element: <AuthorPosts /> },
-      { path: "posts/categories/:category", element: <CategoryPosts /> }
+      { path: "posts/users/:id", element: <AuthorPosts /> },
+      { path: "authors/", element: <Authors /> },
+      { path: "posts/categories/:category", element: <CategoryPosts /> },
+
     ]
+  },
+  {
+    path: "login", element: <Login />
+  },
+  {
+    path: "register", element: <Register />
   }
 ]);
 

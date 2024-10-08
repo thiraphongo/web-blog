@@ -2,9 +2,9 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <div className="footer bg-primary h-full">
-      <div className="container mx-auto px-4 py-10 ">
-        <div className="row grid lg:grid-cols-4 md:grid-cols-2">
+    <div className="footer bg-primary ">
+      <div className="container mx-auto px-4 py-10  ">
+        <div className="row grid lg:grid-cols-4 md:grid-cols-2  ">
           <div className="col-span-1 md:py-5">
             <div className=" flex flex-col">
               <div className="flex items-center">
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
       </div>
 <hr/>
-      <div className="container mx-auto py-8 px-4 text-white text-sm">
+      <div className="container mx-auto py-8 px-4 text-white text-sm ">
       Copyright © 2024 Hurricane Co., Ltd. All Rights Reserved
       </div>
     </div>

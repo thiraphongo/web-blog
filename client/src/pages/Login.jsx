@@ -2,6 +2,7 @@ import Pic1 from "../assets/pic-1.png";
 import Logo from "../assets/logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -9,17 +10,17 @@ const Login = () => {
     password: "",
   });
 
-  const inputValue = e => {
-    setUserData({...userData, [e.target.name]:e.target.value})
+  const inputValue = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
   return (
     <div>
       <div className="row lg:grid grid-cols-6 items-center register">
-        <div className="col-span-4 bg-primary flex items-center justify-center">
+        <div className="col-span-4 bg-primary flex items-center justify-center h-lvh">
           <img src={Pic1} alt="" width="600" />
         </div>
-        <div className="col-span-2 px-10">
+        <div className="col-span-2 px-10 py-10">
           <div className="row">
             <div className="col">
               <div className="group-logo-register flex items-center">
@@ -65,10 +66,14 @@ const Login = () => {
                 </form>
                 <h4>
                   หากไม่มีบัญชี ?{" "}
-                  <Link to="/register" className="text-primary">
+                  <Link to="/register" className="text-primary hover:text-blue-600">
                     สมัครสมาชิก
                   </Link>
                 </h4>
+                <Link to="/" className="hover:text-blue-600"><h4 className="py-4 flex items-center gap-x-2">
+                  <FaArrowLeft />
+                  กลับไปที่ Hurricane 
+                </h4></Link>
               </div>
             </div>
           </div>

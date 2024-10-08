@@ -32,6 +32,11 @@ const Header = () => {
               </a>
             </li>
             <li>
+              <a href="/authors" className="text-black">
+                Authors
+              </a>
+            </li>
+            <li>
               <a href="/" className="text-black">
                 Service
               </a>
@@ -56,7 +61,7 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="btn"><Link to="/login" className=" flex items-center gap-x-2.5 bg-primary px-4 py-2 text-white rounded-full">Login <FiLogIn /></Link></div>
+          <div className="btn"><Link to="/login" className=" flex items-center gap-x-2.5 bg-primary px-4 py-2 text-white hover:bg-blue-600 rounded-full">Login <FiLogIn /></Link></div>
         </div>
       </div>
 

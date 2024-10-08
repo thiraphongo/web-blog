@@ -18,7 +18,7 @@ const Register = () => {
   return (
     <div>
       <div className="row lg:grid grid-cols-6 items-center register">
-        <div className="col-span-4 bg-primary flex items-center justify-center">
+        <div className="col-span-4 bg-primary flex items-center justify-center h-lvh">
           <img src={Pic1} alt="" width="600" />
         </div>
         <div className="col-span-2 px-10">
@@ -87,7 +87,7 @@ const Register = () => {
                 </form>
                 <h4>
                   หากมีบัญชีอยู่แล้ว ?{" "}
-                  <Link to="/login" className="text-primary">
+                  <Link to="/login" className="text-primary hover:text-blue-600">
                     เข้าสู่ระบบ
                   </Link>
                 </h4>
