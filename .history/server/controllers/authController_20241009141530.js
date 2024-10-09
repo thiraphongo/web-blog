@@ -32,8 +32,8 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await userModel.findOne({ email });
-        const errorMsg = 'การตรวจสอบสิทธิ์ล้มเหลวอีเมลหรือรหัสผ่านไม่ถูกต้อง';
+        const user = await UserModel.findOne({ email });
+        const errorMsg = 'Auth failed email or password is wrong';
         if (!user) {
             return res.status(403)
                 .json({ message: errorMsg, success: false });
