@@ -13,8 +13,8 @@ const app = express()
 
 // connect Database
 mongoose.connect(process.env.DATABASE)
-    .then(() => console.log("Connect Database Successfully!"))
-    .catch((err) => console.log(err))
+.then(()=>console.log("Connect Database Successfully!"))
+.catch((err)=>console.log(err))
 
 
 //  middleware
@@ -25,13 +25,13 @@ app.use(morgan("dev"))
 
 
 // import Route
-const authRoute = require('./routes/AuthRoute')
-const blogRouth = require('./routes/BlogRoute')
+const authRoute =  require('./routes/auth')
+const blogRouth = require('./routes/blogRoute')
 
 // route
-app.use('/api', authRoute);
+app.use('/api',authRoute);
 
-app.use('/blog', blogRouth);
+app.use('blog',);
 
 
 const port = process.env.PORT || 8080
